@@ -16,6 +16,7 @@ public class User {
     private final HashSet<String> friends;
     private HashMap<String, Account> accounts;
     private Portfolio portfolio;
+    private boolean premium;
 
     public User(String email, String lastName, String firstName, String address) {
         this.email = email;
@@ -25,6 +26,7 @@ public class User {
         this.friends = new HashSet<>();
         this.accounts = new HashMap<>();
         this.portfolio = new Portfolio();
+        this.premium = false;
     }
 
     public void setLastName(String lastName) {
@@ -49,6 +51,11 @@ public class User {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    @JsonIgnore
+    public boolean isPremium() {
+        return premium;
     }
 
     public String getLastName() {
@@ -95,5 +102,9 @@ public class User {
     public void buyStocks(int noOfStocks, String company, float pricePerStock) {
         this.accounts.get("USD").removeMoney(noOfStocks * pricePerStock);
         this.portfolio.getStocks().add(new Stock(company, noOfStocks));
+    }
+    public void buyPremium() {
+        this.accounts.get("USD").removeMoney(100);
+        this.premium = true;
     }
 }

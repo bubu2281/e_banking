@@ -24,15 +24,15 @@ public class Account {
         this.amount += amount;
     }
     public void exchangeMoney(String destinationCurrency, double amount, double exchangeRate) {
-        double initalAmount = amount;
+        double initialAmount = amount;
         amount = amount * exchangeRate;
 
-        if (amount > this.amount * 0.5) {
+        if (amount > this.amount * 0.5 && !this.owner.isPremium()) {
             //comisionul de 1% in caz de depasire a pragului de 50% din contul sursa
             amount = (double) (amount * 1.01);
         }
         this.amount -= (float) amount;
-        owner.getAccounts().get(destinationCurrency).addMoney((float) initalAmount);
+        owner.getAccounts().get(destinationCurrency).addMoney((float) initialAmount);
     }
     public void transferMoney(User receiver, float amount) {
         this.amount -= amount;

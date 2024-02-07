@@ -1,0 +1,6 @@
+{"stocks":[],"accounts":[{"currencyName":"USD","amount":"1000.00"},{"currencyName":"EUR","amount":"0.00"}]}
+{"stocks":[],"accounts":[{"currencyName":"USD","amount":"900.00"},{"currencyName":"EUR","amount":"0.00"}]}
+{"stocks":[],"accounts":[{"currencyName":"USD","amount":"741.00"},{"currencyName":"EUR","amount":"100.00"}]}
+{"stocks":[],"accounts":[{"currencyName":"USD","amount":"264.00"},{"currencyName":"EUR","amount":"400.00"}]}
+{"stocksToBuy":["KO","JPM","AMZN"]}
+{"stocks":[{"stockName":"KO","amount":1}],"accounts":[{"currencyName":"USD","amount":"207.20"},{"currencyName":"EUR","amount":"400.00"}]}

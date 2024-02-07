@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class App {
@@ -16,6 +17,7 @@ public class App {
     public static File commandsFile;
     public static HashMap<String,User> users;
     public static String[] currentCommandSplit;
+    public static HashSet<String> recommendedStocks;
     private App() {};
     public static App getInstance() {
         if (app == null) {
@@ -28,6 +30,7 @@ public class App {
         App.stockValuesFile = new File ("src/main/resources/" + stockValuesFile);
         App.commandsFile = new File("src/main/resources/" + commandsFile);
         users = new HashMap<>();
+        recommendedStocks = new HashSet<>();
     }
 
 //    public static void resetApp() {

@@ -31,6 +31,9 @@ public class BuyStocksCommand extends Command{
         if (pricePerStock * noOfStocks > usdAccount.getAmount()) {
             throw new InsufficientFundsStocks();
         }
+        if (App.recommendedStocks.contains(company) && user.isPremium()) {
+            pricePerStock = (float) (pricePerStock * 0.95);
+        }
         user.buyStocks(noOfStocks, company, pricePerStock);
     }
 }

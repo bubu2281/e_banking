@@ -33,6 +33,7 @@ public class RecommendStocksCommand extends Command{
                 longAverage /= 10;
                 if (shortAverage > longAverage) {
                     recommendations.addStockToBuy(lineSplit[0]);
+                    App.recommendedStocks.add(lineSplit[0]);
                 }
             }
         } catch (FileNotFoundException ignored) {
