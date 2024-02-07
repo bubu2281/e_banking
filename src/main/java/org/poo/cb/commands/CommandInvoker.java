@@ -13,55 +13,6 @@ public class CommandInvoker {
         return commandInvoker;
     }
     public void executeCommand() throws AppException {
-        switch (App.currentCommandSplit[0]) {
-            case "CREATE": {
-                if (App.currentCommandSplit[1].equals("USER")) {
-                    new CreateUserCommand().execute();
-                }
-                break;
-            }
-            case "ADD" : {
-                if (App.currentCommandSplit[1].equals("FRIEND")) {
-                    new AddFriendCommand().execute();
-                }
-                if (App.currentCommandSplit[1].equals("ACCOUNT")) {
-                    new AddAccountCommand().execute();
-                }
-                if (App.currentCommandSplit[1].equals("MONEY")) {
-                    new AddMoneyCommand().execute();
-                }
-                break;
-            }
-            case "EXCHANGE" : {
-                new ExchangeMoneyCommand().execute();
-                break;
-            }
-            case "TRANSFER" : {
-                new TransferMoneyCommand().execute();
-                break;
-            }
-            case "LIST" : {
-                if (App.currentCommandSplit[1].equals("USER")) {
-                    new ListUserCommand().execute();
-                }
-                if (App.currentCommandSplit[1].equals("PORTFOLIO")) {
-                    new ListPortfolioCommand().execute();
-                }
-                break;
-            }
-            case "RECOMMEND" : {
-                new RecommendStocksCommand().execute();
-                break;
-            }
-            case "BUY" : {
-                if (App.currentCommandSplit[1].equals("STOCKS")) {
-                    new BuyStocksCommand().execute();
-                }
-                if (App.currentCommandSplit[1].equals("PREMIUM")) {
-                    new BuyPremiumCommand().execute();
-                }
-                break;
-            }
-        }
+        new CommandFactory().getCommand().execute();
     }
 }
