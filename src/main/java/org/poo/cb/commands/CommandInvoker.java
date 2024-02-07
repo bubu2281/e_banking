@@ -53,6 +53,15 @@ public class CommandInvoker {
                 new RecommendStocksCommand().execute();
                 break;
             }
+            case "BUY" : {
+                if (App.currentCommandSplit[1].equals("STOCKS")) {
+                    new BuyStocksCommand().execute();
+                }
+//                if (App.currentCommandSplit[1].equals("PORTFOLIO")) {
+//                    new ListPortfolioCommand().execute();
+//                }
+                break;
+            }
         }
     }
 }

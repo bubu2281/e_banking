@@ -38,4 +38,7 @@ public class Account {
         this.amount -= amount;
         receiver.getAccounts().get(this.currencyName).addMoney(amount);
     }
+    public void removeMoney(float amount) {
+        this.amount -= amount;
+    }
 }

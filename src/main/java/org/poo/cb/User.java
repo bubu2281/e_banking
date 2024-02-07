@@ -92,4 +92,8 @@ public class User {
         } catch (JsonProcessingException ignored) {
         }
     }
+    public void buyStocks(int noOfStocks, String company, float pricePerStock) {
+        this.accounts.get("USD").removeMoney(noOfStocks * pricePerStock);
+        this.portfolio.getStocks().add(new Stock(company, noOfStocks));
+    }
 }
